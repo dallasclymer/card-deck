@@ -1,0 +1,16 @@
+<div class="deck-details">
+    <h1>Deck of cards</h1>
+    <span>Cards in hand: {{ hand }} </span>
+</div>
+
+
+<div class="card-deck">
+    <app-card *ngFor="let card of hand" [suit]="card.slice(0, 1)" [index]="card.slice(1)"></app-card>
+
+    <!-- <app-card *ngFor="let card of cards"></app-card> -->
+    <!-- <app-card suit="hearts" [index]="5"></app-card>
+    <app-card suit="spades" [index]="7"></app-card>
+    <app-card suit="diamonds" index="A"></app-card>
+    <app-card suit="clubs" index="J"></app-card>
+    <app-card suit="diamonds" index="K"></app-card> -->
+</div>

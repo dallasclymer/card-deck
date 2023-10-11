@@ -1,0 +1,78 @@
+<div class="card-container">
+
+    <!-- <div class="card-suit">
+        <ng-container *ngTemplateOutlet="symbol"></ng-container>
+    </div>
+    <div class="card-index">
+        <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+    </div> -->
+
+
+    <div class="card-top">
+        <div class="card-index">
+            <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+        </div>
+        <div class="card-index">
+            <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+        </div>
+    </div>
+
+    <div class="card-center">
+        <div class="card-suit">
+            <ng-container *ngTemplateOutlet="symbol"></ng-container>
+        </div>
+    </div>
+
+    <div class="card-bottom">
+        <div class="card-index">
+            <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+        </div>
+        <div class="card-index">
+            <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+        </div>
+    </div>
+
+
+
+</div>
+
+
+
+<!-- <div class="box">
+    <span>
+        <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+        <ng-container *ngTemplateOutlet="symbol"></ng-container>
+    </span>
+    <span>
+        <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+    </span>
+    <span>
+        <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+    </span>
+    <span>
+        <ng-container *ngTemplateOutlet="symbol"></ng-container>
+        <ng-container *ngTemplateOutlet="indexValue"></ng-container>
+    </span>
+    <span>
+        <ng-container *ngTemplateOutlet="symbol"></ng-container>
+    </span>
+</div> -->
+
+
+
+<ng-template #indexValue [ngSwitch]="suit">
+    <span *ngSwitchCase="'D'" class="diamonds">{{ index || 'N/A'}}</span>
+    <span *ngSwitchCase="'H'" class="hearts">{{ index || 'N/A'}}</span>
+    <span *ngSwitchCase="'C'" class="clubs">{{ index || 'N/A'}}</span>
+    <span *ngSwitchCase="'S'" class="spades">{{ index || 'N/A'}}</span>
+    <div *ngSwitchDefault>output2: {{ index }}</div>
+</ng-template>
+
+
+<ng-template #symbol [ngSwitch]="suit">
+    <img *ngSwitchCase="'C'" draggable="false" src="/assets/card_suits/SuitClubs.svg" alt="{{suit}}" />
+    <img *ngSwitchCase="'D'" draggable="false" src="/assets/card_suits/SuitDiamonds.svg" alt="{{suit}}" />
+    <img *ngSwitchCase="'H'" draggable="false" src="/assets/card_suits/SuitHearts.svg" alt="{{suit}}" />
+    <img *ngSwitchCase="'S'" draggable="false" src="/assets/card_suits/SuitSpades.svg" alt="{{suit}}" />
+    <div *ngSwitchDefault>output2</div>
+</ng-template>
