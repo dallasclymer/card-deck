@@ -1,5 +1,7 @@
 # CardStack
 
+[French-suited playing cards](https://en.wikipedia.org/wiki/French-suited_playing_cards)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
 ## Development server
